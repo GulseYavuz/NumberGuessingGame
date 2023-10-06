@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint_layout_game"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameFragment">
+
+    <TextView
+        android:id="@+id/textViewGame"
+        android:layout_width="315dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="35dp"
+        android:text="Kalan Tahmin Hakkınız:  5"
+        android:textAlignment="center"
+        android:textColor="#511AB8"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextGuess"
+        android:layout_width="264dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="160dp"
+        android:ems="10"
+        android:hint="Tahmin Gir"
+        android:inputType="number|numberDecimal|numberSigned"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewUp" />
+
+    <Button
+        android:id="@+id/buttonGuess"
+        android:layout_width="189dp"
+        android:layout_height="78dp"
+        android:text="TAHMİN ET"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextGuess"
+        app:layout_constraintVertical_bias="0.655" />
+
+    <ImageView
+        android:id="@+id/imageViewUp"
+        android:layout_width="107dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="55dp"
+        android:src="@drawable/baseline_arrow_upward_24"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewGame" />
+
+    <ImageView
+        android:id="@+id/imageViewDown"
+        android:layout_width="107dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="55dp"
+        android:src="@drawable/baseline_arrow_downward_24"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewGame" />
+
+    <ImageView
+        android:id="@+id/imageViewWin"
+        android:layout_width="107dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="55dp"
+        android:src="@drawable/baseline_celebration_24"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewGame" />
+</androidx.constraintlayout.widget.ConstraintLayout>
