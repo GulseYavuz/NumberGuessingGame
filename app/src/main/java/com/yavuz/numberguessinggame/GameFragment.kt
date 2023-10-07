@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import androidx.fragment.app.FragmentManager
 import com.yavuz.numberguessinggame.databinding.FragmentGameBinding
 import kotlinx.coroutines.delay
 import kotlin.random.Random
@@ -27,7 +28,7 @@ class GameFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        randomInt = Random.nextInt(1,100).toString()
+        randomInt = Random.nextInt(1,50).toString()
         Log.i("RANDOM NUMBER", "RANDOM NUMBER: $randomInt")
 
         binding.buttonGuess.setOnClickListener {

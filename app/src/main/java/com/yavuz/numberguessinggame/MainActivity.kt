@@ -19,4 +19,8 @@ class MainActivity : AppCompatActivity() {
 
         replaceFragment(MainFragment())
     }
+
+    override fun onBackPressed() {
+        finish()
+    }
 }
