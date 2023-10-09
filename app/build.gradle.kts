@@ -1,11 +1,12 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
     namespace = "com.yavuz.numberguessinggame"
-    compileSdk = 33
+    compileSdk = 34
 
     buildFeatures{
         dataBinding = true
@@ -42,7 +43,18 @@ android {
     }
 }
 
+
 dependencies {
+
+    implementation("androidx.navigation:navigation-fragment:2.7.4")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.4")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.4")
+    //Kotlin
+    val nav_version = "2.5.3"
+    implementation("androidx.fragment:fragment-ktx:1.5.4")
+    implementation("androidx.navigation:navigation-runtime:[2.5.3]")
+    implementation("androidx.slidingpanelayout:slidingpanelayout:1.2.0")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.6.21")
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -53,3 +65,7 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
+
+
+
+

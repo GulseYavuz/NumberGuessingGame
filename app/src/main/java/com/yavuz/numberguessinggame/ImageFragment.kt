@@ -6,32 +6,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.addCallback
-import androidx.fragment.app.FragmentManager
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
-import com.yavuz.numberguessinggame.databinding.FragmentGameBinding
-import com.yavuz.numberguessinggame.databinding.FragmentGameOverBinding
+import com.yavuz.numberguessinggame.databinding.FragmentImageBinding
 
-class GameOverFragment : Fragment() {
-    private lateinit var binding: FragmentGameOverBinding
-
+class ImageFragment : Fragment() {
+    private lateinit var binding: FragmentImageBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentGameOverBinding.inflate(inflater,container,false)
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner){
-            val action = GameOverFragmentDirections.actionGameOverFragmentToImageFragment()
-            findNavController().navigate(action)
-        }
+        binding = FragmentImageBinding.inflate(inflater, container, false)
 
-        binding.buttonTryAgain.setOnClickListener {
-            val action = GameOverFragmentDirections.actionGameOverFragmentToImageFragment()
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner){
+            val action = ImageFragmentDirections.actionImageFragmentToMainFragment()
+            findNavController().navigate(action)
+
+        }
+        binding.buttonPlayGame.setOnClickListener {
+            val action = ImageFragmentDirections.actionImageFragmentToGameFragment()
             Navigation.findNavController(it).navigate(action)
         }
         return binding.root
     }
-
-
 }

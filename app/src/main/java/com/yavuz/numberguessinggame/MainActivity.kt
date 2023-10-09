@@ -16,11 +16,5 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         val view = binding.root
         setContentView(view)
-
-        replaceFragment(MainFragment())
-    }
-
-    override fun onBackPressed() {
-        finish()
     }
 }

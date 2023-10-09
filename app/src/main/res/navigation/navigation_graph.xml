@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.yavuz.numberguessinggame.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.yavuz.numberguessinggame.InfoFragment"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" >
+        <action
+            android:id="@+id/action_infoFragment_to_imageFragment2"
+            app:destination="@id/imageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="com.yavuz.numberguessinggame.ImageFragment"
+        android:label="fragment_image"
+        tools:layout="@layout/fragment_image" >
+        <action
+            android:id="@+id/action_imageFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_imageFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/infoFragment"
+            app:popUpToInclusive="false"/>
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.yavuz.numberguessinggame.GameFragment"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/action_gameFragment_to_gameOverFragment"
+            app:destination="@id/gameOverFragment" />
+        <action
+            android:id="@+id/action_gameFragment_to_gameOverWinFragment"
+            app:destination="@id/gameOverWinFragment" />
+        <action
+            android:id="@+id/action_gameFragment_to_imageFragment"
+            app:destination="@id/imageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameOverFragment"
+        android:name="com.yavuz.numberguessinggame.GameOverFragment"
+        android:label="fragment_game_over"
+        tools:layout="@layout/fragment_game_over" >
+        <action
+            android:id="@+id/action_gameOverFragment_to_imageFragment"
+            app:destination="@id/imageFragment"
+            app:popUpTo="@id/gameFragment"
+            app:popUpToInclusive="false"/>
+    </fragment>
+    <fragment
+        android:id="@+id/gameOverWinFragment"
+        android:name="com.yavuz.numberguessinggame.GameOverWinFragment"
+        android:label="fragment_game_over_win"
+        tools:layout="@layout/fragment_game_over_win" >
+        <action
+            android:id="@+id/action_gameOverWinFragment_to_imageFragment"
+            app:destination="@id/imageFragment"
+            app:popUpTo="@id/gameFragment"
+            app:popUpToInclusive="false"/>
+    </fragment>
+</navigation>

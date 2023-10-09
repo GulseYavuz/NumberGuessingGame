@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_info"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InfoFragment">
+
+    <TextView
+        android:id="@+id/textViewInfo"
+        android:layout_width="203dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="131dp"
+        android:layout_marginTop="81dp"
+        android:layout_marginEnd="135dp"
+        android:text="GAME INFORMATION"
+        android:textColor="#505EAE"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewRule1"
+        android:layout_width="269dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginEnd="93dp"
+        android:text="Choose a number between 1 and 51."
+        android:textColor="#649F9A"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewInfo" />
+
+    <TextView
+        android:id="@+id/textViewRule2"
+        android:layout_width="274dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="95dp"
+        android:text="Click the button of 'GUESS'"
+        android:textColor="#649F9A"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.315"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRule1" />
+
+    <TextView
+        android:id="@+id/textViewRule3"
+        android:layout_width="274dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="93dp"
+        android:text="You have 5 guess chances in total."
+        android:textColor="#649F9A"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.352"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRule2" />
+
+    <Button
+        android:id="@+id/buttonInfo"
+        android:layout_width="140dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="137dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="138dp"
+        android:backgroundTint="#8CB88E"
+        android:text="NEXT"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewGooodLuck" />
+
+    <TextView
+        android:id="@+id/textViewGooodLuck"
+        android:layout_width="175dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="145dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="145dp"
+        android:text="G O O D   L U C K"
+        android:textAlignment="center"
+        android:textColor="#7886D1"
+        android:textColorHighlight="#465085"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRule3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import androidx.fragment.app.FragmentManager
+import androidx.navigation.Navigation
 import com.yavuz.numberguessinggame.databinding.FragmentGameBinding
 import kotlinx.coroutines.delay
 import kotlin.random.Random
@@ -28,7 +29,7 @@ class GameFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        randomInt = Random.nextInt(1,50).toString()
+        randomInt = Random.nextInt(1,51).toString()
         Log.i("RANDOM NUMBER", "RANDOM NUMBER: $randomInt")
 
         binding.buttonGuess.setOnClickListener {
@@ -48,14 +49,15 @@ class GameFragment : Fragment() {
 
             remainingGuess --
 
-
             binding.textViewGame.text = "Kalan Tahmin Hakkınız:  $remainingGuess"
 
             if(remainingGuess == 0) {
-                replaceFragment(GameOverFragment())
+                val action = GameFragmentDirections.actionGameFragmentToGameOverFragment()
+                Navigation.findNavController(it).navigate(action)
             }
             else if (userGuess == randomInt){
-                replaceFragment(GameOverWinFragment())
+                val action = GameFragmentDirections.actionGameFragmentToGameOverWinFragment()
+                Navigation.findNavController(it).navigate(action)
             }
         }
     }

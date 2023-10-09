@@ -6,7 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
+import androidx.activity.addCallback
 import androidx.fragment.app.FragmentManager
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.yavuz.numberguessinggame.databinding.FragmentMainBinding
 import kotlin.random.Random
 
@@ -19,18 +23,16 @@ class MainFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentMainBinding.inflate(inflater, container, false)
+        val callBack = object :OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                activity?.finish()
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callBack)
+        binding.buttonPlay.setOnClickListener {
+            val action = MainFragmentDirections.actionMainFragmentToInfoFragment()
+            Navigation.findNavController(it).navigate(action)
+        }
         return binding.root
     }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.buttonPlay.setOnClickListener {
-            replaceFragment(GameFragment())
-        }
-    }
-
-
-
-
-
 }
